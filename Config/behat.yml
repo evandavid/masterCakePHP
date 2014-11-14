@@ -1,0 +1,24 @@
+default:
+  paths:
+    features: ../features
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url:  'http://localhost/cakephp/'
+      goutte:
+        guzzle_parameters:
+          request.params:
+            redirect.disable: true
+      # 
+      # switch disable followings if use behat/mink-selenium2-driver 
+      #
+      selenium: 
+        host: localhost
+        port: 4444
+      javascript_session: selenium
+      # 
+      # switch enable followings if use behat/mink-selenium2-driver 
+      #
+      # javascript_session: selenium2
+      # browser_name: 'firefox'
+      # selenium2:                    
+      #   capabilities: { "browser": "firefox"}
